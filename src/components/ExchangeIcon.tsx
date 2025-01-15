@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { getExchangeIcon } from '../utils/exchangeIcons';
 
 interface ExchangeIconProps {
@@ -7,7 +7,7 @@ interface ExchangeIconProps {
 }
 
 export const ExchangeIcon: React.FC<ExchangeIconProps> = ({ exchangeId, size = 24 }) => {
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<boolean>(false);
   const iconPath = getExchangeIcon(exchangeId);
 
   return (
@@ -20,4 +20,6 @@ export const ExchangeIcon: React.FC<ExchangeIconProps> = ({ exchangeId, size = 2
       style={{ objectFit: 'contain' }}
     />
   );
-}; 
+};
+
+export default ExchangeIcon; 
